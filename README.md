@@ -19,7 +19,7 @@ SshIM 是一个解决ssh中使用vim/nvim 中文输入法自动切换插件。
 "服务器端地址，形如：http://localhost:8088 最后一个字符不要带/
 let g:sshim_url = 'http://localhost:8088'
 "0启用插件，1禁用插件,默认为0 
-let g:sshim_disable = 1
+let g:sshim_disable = 0
 
 ```
 当你使用宏的时候，或者出现短时间内频繁 insert 与normal模式切换的时候，可以通过`let g:sshim_disable = 1`来禁用输入法切换插件来提醒执行效率。
@@ -30,5 +30,9 @@ let g:sshim_disable = 1
 - 从normal模式切换到insert模式插件会自动请求服务器的`/insertEnter`地址
 
 服务器部署在你正在使用的电脑上面，这样你的电脑就能接收到当前的vim状态了，根据这个状态通过一些工具来切换本地的输入法即可。
+
+# 服务器端
+这里提供一个思路，不同的操作系统和输入法框架在输入法切换这块是不同的。
+我这边使用的是[smartim](https://github.com/ybian/smartim)项目中,提供的命令行工具实现的macOS中的输入法切换。
 # 灵感
 https://github.com/ybian/smartim

@@ -27,14 +27,14 @@ function! SshIMInsertLeave()
 	if g:sshim_disable == 1
     	return
   	endif
-	silent exec "!(curl ".g:sshim_url."/insertLeave > /dev/null >2&1) &"
+	silent exec "!(curl ".g:sshim_url."/insertLeave > /dev/null 2>&1) &"
 endfunction
 "处理进入insert模式的事件
 function! SshIMInsertEnter()
 	if g:sshim_disable == 1
     	return
   	endif
-	silent exec "!(curl ".g:sshim_url."/insertEnter > /dev/null >2&1) &"
+	silent exec "!(curl ".g:sshim_url."/insertEnter > /dev/null 2>&1) &"
 endfunction
 "绑定事情处理函数
 autocmd InsertLeave * call SshIMInsertLeave() 
